@@ -1,0 +1,17 @@
+// SPDX-License-Identifier: Unlicensed
+pragma solidity ^0.8.15;
+
+contract Variables {
+    string public text="hello";
+    uint public num=256;
+
+
+function doSomething() public {
+    uint i=9;
+
+    uint timestamp=block.timestamp;
+    address sender=msg.sender;
+}
+
+
+}
