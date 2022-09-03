@@ -1,0 +1,159 @@
+// SPDX-License-Identifier: Unlicensed
+pragma solidity ^0.8.15;
+
+
+// contract prpperty{
+    // bytes1 public a1;
+    // bytes2 public a2;
+    // bytes3 public a3;
+    // bytes4 public a4;
+    // uint[3] public Number=[10,20,30];
+
+    // function  setBytes() public { //bytes store value in hexadecimal
+    //     a1="a";
+    //     a2="ab";
+    //     a3="abc";
+    //     a4="abcd";
+    // }
+
+    // function setNumber(uint index , uint value) public {
+    //     Number[index]=value;
+    // }
+
+    // function getLength() public view returns(uint){
+    //     return Number.length;
+    // }
+     
+
+
+     //&&&&&&&&&&&&&&&&******fixed and dynamic size array*******&&&&&&&&&&&&&&//
+    // uint[] public numbers;
+
+    // function getLength() public view returns(uint) {
+    //     return numbers.length;
+    // }
+    
+    // function pushElement(uint item) public {
+    //     numbers.push(item);
+    // }
+
+    // function popElement() public {
+    //     numbers.pop();
+    // }
+
+    // function f1() public {//memory par dynamic array ko declare kia h r dynamic m hm kch add nh kr skte
+    //     uint[] memory y=new uint[](3);
+    //     y[0]=10;
+    //     y[1]=20;
+    //     y[2]=30;
+    //     numbers=y;
+    // }
+
+
+    //   bytes public b1="abc";
+    //   string public s1="abc";
+
+    //   function addElement() public {
+    //       b1.push("d");
+    //   }
+
+    //   function getElement(uint i) public view returns (bytes1){
+    //       return b1[i];
+    //   }
+
+
+
+
+    //&&&&&&&&&&&&&&&*****LOOPS**********&&&&&&&&&&&//
+    //HM KSI BH TARH K LOOP KO FUNCTION K BAGAIR NH LOKH SKTE//
+    // uint[4] public  arr=[1,2,3,4];
+    // uint public sum=0;
+
+    // function loop() public {
+    //     uint count=0;
+    //     while(count < arr.length) {
+    //         sum=sum+arr[count];
+    //         count++;
+    //     }
+    // }
+
+    // function loop() public {
+    //         for(uint count=0 ; count<arr.length ; count++){
+    //         sum=sum+arr[count];
+    //           }
+    //       }
+
+    // function loop() public {
+    //     uint count=0;
+    //     do{
+    //         sum=sum+arr[count];
+    //         count++;
+    //     } while (count < arr.length);
+    // }
+
+
+
+
+
+    //&&&&&&&&&&&&&&&***********MEMORY AND STORAGE WORKING IN ARRAY**********&&&&&&&&&&&&7//
+    // string[] public programs=["java","python","c++"];
+
+    // function mem() public  view {
+    //     string[] memory p1=programs;
+    //     p1[0]="javaScript";
+    // }
+
+    // function sto() public {
+    //     string[] storage p1=programs;
+    //     p1[0]="javaScript";
+    // }
+
+
+//&&&&&&&&&**********STRUCTUR***********&&&&&&&&&&&&&&&&////
+//      struct Instructor {
+//     uint age;
+//     string name;
+//     address addr;
+// }  
+
+// contract Academy {
+//     Instructor public academyInstructor;
+//     constructor (uint _age, string memory _name){
+//         academyInstructor.age=_age;
+//         academyInstructor.name=_name;
+//         academyInstructor.addr=msg.sender;
+//     }
+
+//     function changeInstructor(uint _age, string memory _name, address _addr) public {
+//         Instructor memory myInstructor = Instructor({
+//             age : _age,
+//             name : _name,
+//             addr : _addr
+//         });
+//         academyInstructor = myInstructor;
+//     }
+// }
+
+// contract School {
+
+// }
+
+
+
+
+//%%%%%%%%********ENUM*******&&&&&&&&&&&&///////////
+// contract demo {
+//     enum user{allowed, not_allowed, wait}
+
+//     user public u1=user.wait;
+//     uint public lottery=1000;
+
+//     function check() public {
+//         if(u1 == user.allowed){
+//             lottery=0;
+//         }
+//     }
+//     function changeOwner() public {
+//         u1=user.allowed;
+//     }
+// }
