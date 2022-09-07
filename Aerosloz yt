@@ -157,3 +157,130 @@ pragma solidity ^0.8.15;
 //         u1=user.allowed;
 //     }
 // }
+
+
+
+//&&&&&&&&&&********MAPPING*********&&&&&&&&&
+// contract myContract{
+//     mapping(uint => string) public student;
+
+//     function input(uint roll, string memory name) public {
+//         student[roll]=name;
+//     }
+// }
+
+
+////////&&&&&&&&&******INHERITANCE*******&&&&&&&&&
+// contract Parent{
+//     string public str;
+//     address public manager;
+
+//     constructor(){
+//         str="AIMAN";
+//         manager=msg.sender;
+//     }
+//     function setter(string memory _str) public {
+//         str=_str;
+//     }
+// }
+
+// contract child is Parent{
+//     uint public  x;
+// }
+
+
+///&&&&&&&&&&***********ABSTRACT CONTRACTS************&&&&&&&&&&&&&
+//sirf function implementation hoti h r kvh nh btate abstract me at least aik aisa function lazmi ho
+//jiski implementation nh hoe we ho 
+// abstract contract Parent{
+//     string public str;
+//     address public manager;
+
+//     constructor(){
+//         str="AIMAN";
+//         manager=msg.sender;
+//     }
+//     function setter(string memory _str) public virtual ;//jha implementation  nh hoe we h waha virtual likhhe ge
+// }
+
+// contract child is Parent{
+// // ya to contract s phle abstract declare kre g warna jis function k implementation nh de the usko
+// //decalre kre g llkin sath m override bh likhe g yahe syntax h iska r iska maqsad h wo function jo
+// //hm n decalare nh kia tha phle ab yha usko override krhe h yani decalre    
+//     uint public  x;
+//     function setter(string memory _str) public override {
+//         str=_str;
+//     }
+// }
+
+
+
+//&&&&&&&&&**********INTERFACE********&&&&&&&&&&&
+//agr ksi chez ko inteface ko decalre k hoe h to sirf us s h inherit kr skte h aisa nh ho skta  k
+// ksi r contract s krlen
+//state variable cant decalarre , constructor cant be declare
+//functions can be deaclared but not implemented and declartion should be external
+//interface Parent{
+    // string public str;
+    // address public manager;
+
+    // constructor(){
+    //     str="AIMAN";
+    //     manager=msg.sender;
+    // }
+//     function setter(string memory _str) external ;
+// }
+    
+// contract child is Parent{
+//      function setter(string memory _str) public override {
+        
+//     }
+// }
+
+
+
+
+//&&&&&&*******POLYMORPHISM*****&&&&&&&&&&&&&///
+//agr same functions lkin arguments change ho to user ko nh pta k usko kn sa function pr kitna argument 
+//dena h to y chez polymorphism k through decide kia jata h  
+// contract Project{
+
+//     function sum(uint a , uint b) public pure returns(uint){
+//         return a+b;
+//     }
+
+//     function sum(uint a , uint b, uint c) public  pure returns (uint){
+//         return  a+b+c;
+//     }
+
+//     function sum(string memory a, string memory b) public  pure  returns (string memory){
+//         b="Hello";
+//         return a;
+//     }
+// }
+
+
+//&&&&&&&&&&&*************VISIBILITY SPECIFIER*********%%%%%%%%%%%%%//
+// contract Parent {
+//     function f1() public pure returns (uint){
+//         return 1;
+//     }
+//     function f2() private pure returns (uint){ //contract k andar use hon skta h lkin bahar nh na h inherit hoga
+//         return 2;
+//     }
+//     function f3() internal pure returns (uint){ //y bh us contract k andar use hoga,inherit bh hoga lkin
+//     // bahar ksi contrcat m use nh hoga
+//         return  3;
+//     }
+//     function f4() external pure returns (uint){ //within function/(contract wo jo inherit ho us m) is 
+//     //not available
+//         return 4;
+//     }
+// }
+// contract Child is Parent { //derived contract
+    
+// }
+// contract demo { //other contract
+//     Parent parent=new Parent();//class ko decalre krne k lie new likhte h to wo aik method ban jata h
+//     uint public y=parent.f1();
+// }
