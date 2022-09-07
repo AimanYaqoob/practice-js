@@ -284,3 +284,97 @@ pragma solidity ^0.8.15;
 //     Parent parent=new Parent();//class ko decalre krne k lie new likhte h to wo aik method ban jata h
 //     uint public y=parent.f1();
 // }
+
+
+//&&&&&&&&&&&&**********REQUIRE******&&&&&&&&&&//
+//wo chez lazmi ho jb h kro
+// contract demo {
+//     address public owner;
+
+//     constructor(){
+//         owner=msg.sender;
+//     }
+//     function get() public view returns (uint){
+//         require(owner==msg.sender,"You are not the owner");
+//         //is m hm aik sath if else lga skte h phle if bd m else but alg s if else k loop usw kre g to wo 
+//         //gas cost kre ga
+//         return 10;
+//     } 
+// }
+
+
+//&&&&&&&&***********MODIFIER**********&&&&&&&&&&&&&&//
+//us chex k jis k hame within the contract bar bar zarorat par rh h usko as a modifier decalre kre g r 
+//sko h phr use krte rahe g
+// contract demo{
+//     address public owner;
+
+//     constructor (){
+//         owner=msg.sender;
+//     }
+//     modifier onlyOwner(){
+//         require(owner==msg.sender, "You are not the owner");
+//         _;
+//     }
+//     function get10() public view onlyOwner returns(uint){
+//         return 10;
+//     }
+//     function get20() public view onlyOwner returns(uint){
+//         return 20;
+//     }
+//     function get30() public view onlyOwner returns(uint){
+//         return 30;
+//     }
+// }
+
+
+//&&&&&&&&&&&&*******EVENT************&&&&&&&&&&&//
+//jo bh chez browser m trigger krti h wo event h
+//solodity m jb transcation ho jati h to us chez ko hm as s event trigger krte h
+//agr hm e-commerce k website pr ksi ka anme dal de g to wo gas cost kre g jitni bar user ae ga itna zaida 
+//to us s bachne k lie events banate h jo smart contract k sath intercation kr k logs(khata) banata rhta h 
+//r is s hame sb pta chlta h k kn user aia kitne paise die kia adress tha and all jo k blocks m h store hote
+// h lkin smart contrcat m nh jate to gas cost nh hoiti 
+contract demo{
+    string public str;
+
+    event register(address manager , string char);
+
+    function setter(string memory _str) public {
+        str=_str;
+        emit register(msg.sender, str);
+    } 
+}
+
+
+
+//&&&&&&&&&&&&&*********PAYABLE FUCNTIONS********&&&&&&&&&&&&&//
+//jb bh smart contract me ether transfer krne h ya ksi s lene h to usko payable declare kre g
+// contract demo{
+//     function payEther() public payable {
+
+//     }
+//     function checkBalance() public view returns (uint){
+//         return address(this).balance;
+//     }
+// }
+
+
+
+
+//&&&&&&&&&&&&**********PAYABLE ADDRESS**********&&&&&&&&&&//
+// contract demo{
+//     address payable user=payable(0x4B20993Bc481177ec7E8f571ceCaE8A9e22C02db);
+
+//     function payEther() public payable {
+
+//     }
+//     function checkBalance() public view returns (uint){
+//         return address(this).balance;
+//     }
+//     function payEtherToAccount() public {
+//         user.transfer(10 ether);
+//     }
+// }
+
+
