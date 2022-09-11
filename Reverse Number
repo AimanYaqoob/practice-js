@@ -1,0 +1,15 @@
+// SPDX-License-Identifier: Unlicensed
+pragma solidity ^0.8.15;
+contract ReverseNumber{
+    function reverseDigit(uint256 n) public pure returns (uint256){
+        uint256 reverse=0;
+        uint256 remainder;
+
+        while (n!=0){
+            remainder=n%10;
+            reverse=reverse*10+remainder;
+            n=n/10;
+        }
+        return reverse;
+    }
+}
