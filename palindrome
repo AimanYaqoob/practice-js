@@ -1,0 +1,19 @@
+// SPDX-License-Identifier: Unlicensed
+pragma solidity ^0.8.15;
+contract Palindrome{
+    function palindrame(uint256 n) public pure returns (string memory){
+        uint reversed=0;
+        uint original=n;
+        uint remainder;
+
+        while (n!=0){
+            remainder=n%10;
+            reversed=reversed*10+remainder;
+            n=n/10;
+        }
+        if(original==reversed){
+            return "palindrome";
+        }
+        return "not a palindrome";
+    }
+}
