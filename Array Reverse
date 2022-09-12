@@ -1,0 +1,14 @@
+// SPDX-License-Identifier: Unlicensed
+pragma solidity ^0.8.15;
+contract practice{
+   function reverseArray(uint256[] memory arrNum , uint256 arrLength) public 
+   pure 
+   returns (uint256[] memory){
+       uint256 temp;
+       for(uint256 i=0 ; i<arrLength/2 ;  i++){
+           temp=arrNum[i];
+           arrNum[i]=arrNum[arrLength-i-1];
+       }
+       return arrNum;
+   }
+}
