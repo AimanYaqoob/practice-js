@@ -1,0 +1,11 @@
+// SPDX-License-Identifier: Unlicensed
+pragma solidity ^0.8.15;
+contract practice{
+   function sumArray(uint256[] memory array , uint256 arrLength) public pure returns (uint256){
+       uint256 sum=0;
+       for(uint256 i=0 ; i < arrLength ; i++){
+          sum+=array[i];
+       }
+       return sum;
+   }
+}
