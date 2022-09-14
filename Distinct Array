@@ -1,0 +1,21 @@
+// SPDX-License-Identifier: Unlicensed
+pragma solidity ^0.8.15;
+contract practice{
+    function distinct(uint256[] memory array,uint256 arrLength) public pure returns (uint256){
+        uint256 i;
+        uint256 j;
+        uint256 count=1;
+        for(i=1 ; i < arrLength ; i++){
+            for(j=0 ; j < i ; j++){
+                if(array[i]==array[j]){
+                    break;
+                }
+            }
+
+            if(i==j){
+                count++;
+            }
+        }
+        return count;
+    }
+}
