@@ -1,0 +1,20 @@
+// SPDX-License-Identifier: Unlicensed
+pragma solidity ^0.8.15;
+contract practice{
+    struct Book {
+        string title; 
+        string author; 
+        uint256 book_id; }
+
+        Book[100] books;
+        uint256 counter=1;
+
+        function setBook(string memory _title,string memory _author,uint256 _id) public {
+            books[counter]=Book(_title,_author,_id);
+            counter++;
+        }
+
+        function getBook(uint256 counter) public view returns(string memory,string memory,uint256){
+            return (books[counter].title,books[counter].author,books[counter].book_id);
+        }
+}
