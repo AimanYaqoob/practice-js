@@ -14,7 +14,7 @@ contract Mapping {
     }
 }
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 // SPDX-License-Identifier: Unlicensed
@@ -34,3 +34,24 @@ contract NestedMapping{
         delete nested [_addr][_i];
     }
 }
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+// SPDX-License-Identifier: Unlicensed
+pragma solidity ^0.8.15;
+contract practice{
+ mapping (address => uint256) balances;
+
+ function updateBalance(uint256 balanceToUpdate) public {
+   balances[msg.sender]=balanceToUpdate;
+ }
+
+ function checkBalance(address _user) public view returns (uint256){
+   require(msg.sender==_user, "You are not the owner of the account");
+   return balances[_user];
+ }
+}
+
+
