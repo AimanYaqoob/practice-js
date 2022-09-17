@@ -1,0 +1,47 @@
+// SPDX-License-Identifier: Unlicensed
+pragma solidity ^0.8.15;
+contract practice{
+//   address owner;
+
+//    constructor() {
+//      owner=msg.sender;
+//    }
+
+//    modifier onlyOwner(){
+//      require(msg.sender==owner);
+//      _;
+//    }
+
+//    function send(address payable[] memory to,uint256[] memory amount)public payable onlyOwner{
+//      require(to.length==amount.length,"to must be same length as amount");
+//      for(uint256 i=0; i<to.length; i++){
+//        (bool transferred,) = to[i].call{value: amount[i]}("");
+//        require(transferred, "Failed to transfer ether");    
+//       }
+//    }
+// }
+
+
+    address owner;
+
+    constructor() {
+        owner = msg.sender;
+    }
+
+    function send(address payable[] memory to, uint256[] memory amount)
+        public
+        payable
+        ownerOnly
+    {
+        require(to.length == amount.length, "to must be same length as amount");
+        for (uint256 i = 0; i < to.length; i++) {
+            to[i].transfer(amount[i]); //to array  - 0x00 0x01 0x02
+            //amount array - 10 20 30
+        }
+    }
+
+    modifier ownerOnly() {
+        require(msg.sender == owner);
+        _;
+    }
+}
