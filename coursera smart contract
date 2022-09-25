@@ -218,4 +218,27 @@ contract Ballot {
 
 
 
-***********************
+*********************** B I D D I N G - C O N T R A C T************************
+contract bidder{
+    string public  name;
+    uint public bidAmount=20000;
+    bool public eligible;
+    uint constant minBid=10000;
+
+    function setName(string memory _name) public {
+        name=_name;
+    }
+
+    function setBidAmount(uint x)public {
+        setBidAmount(x);
+    }
+
+    function determineEli() public {
+        if(bidAmount >= minBid){
+            eligible=true;
+        }
+        else {
+            eligible=false;
+        }
+    }
+}
